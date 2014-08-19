@@ -1,8 +1,8 @@
-== Anonysender
+## Anonysender
 
 This is for Uber's coding challenge. Anonysender sends email through Mailgun or Mandrill, falling back if one fails. It's written in Ruby on Rails and Backbone.
 
-=== Installation
+### Installation
 
 Before beginning, ensure you have Ruby 2.0 or greater and Bundler installed.
 
@@ -16,7 +16,7 @@ $ ```bundle exec rails s```
 
 Make sure that you have set all the keys in the `.env.sample`, or it will be unable to send email!
 
-=== Files to look at
+### Files to look at
 
 The non-boilerplate code:
 
