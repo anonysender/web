@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anonysender</title>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.syphon/0.4.1/backbone.syphon.min.js"></script>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h3 class="text-muted">Anonymail</h3>
+    </div>
+
+    <div class='jumbotron'>
+      <h2>Send emails anonymously.</h2>
+      <div id='mail'></div>
+    </div>
+  </div>
+
+  <script type="text/template" id="email-template">
+    <form role='form' id='email-form'>
+      <div class="panel panel-success" id='sent-successfully'>
+        <div class="panel-heading">
+          <h3 class="panel-title">Sent Successfully</h3>
+        </div>
+        <div class="panel-body">
+          Successfully sent the email.
+        </div>
+      </div>
+
+      <div class="panel panel-warning" id='send-error'>
+        <div class="panel-heading">
+          <h3 class="panel-title">An error occurred</h3>
+        </div>
+        <div class="panel-body">
+          Failed to send the email. Double check the email address.
+        </div>
+      </div>
+
+
+      <div class='form-group'>
+        <label for="to">To:</label>
+        <input type='email' placeholder='example@example.com' required autofocus name='to' class='form-control'/>
+      </div>
+
+      <div class='form-group'>
+        <label for="subject">Subject:</label>
+        <input type='text' placeholder='Example Subject' name='subject' class='form-control'/>
+      </div>
+
+      <div class='form-group'>
+        <label for="body">Body:</label>
+        <textarea name="body" rows="8" class='form-control' placeholder="Hi Ed, &#10;&#10;Thanks for sending us those documents. Sorry you're stuck in a Russian airport now. &#10;&#10;Sincerely,&#10;Everyone Except the US Government"></textarea>
+      </div>
+
+      <button class='btn btn-primary' id='send-mail'>Send Email</button>
+      <p class='text-muted'><small>Disclaimer: This is not safe for whistleblowing.</small></p>
+    </form>
+  </script>
+  <%= javascript_include_tag 'application' %>
+</body>
+</html>

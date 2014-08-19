@@ -1,0 +1,9 @@
+@import "bootstrap";
+@import "jumbotron-narrow";
+
+#email-form {
+  text-align: left;
+}
+#sent-successfully, #send-error {
+  display: none;
+}
